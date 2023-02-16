@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Song';
+    src: url('../font/HanaMinA.ttf');
+}
+
+@font-face {
+    font-family: 'Kai';
+    src: url('../font/Free-HK-Kai_4700-v1.02.ttf');
+}
+
+:root {
+    --text-dark: rgb(0, 0, 0);
+    --text-medium: rgb(64, 64, 64);
+    --text-light: rgb(128, 128, 128);
+    --text-color: rgb(128, 0, 0);
+
+    --gap: 2rem;
+
+    --card-border: 1px solid rgb(224, 224, 224);
+    --card-gap: 1rem;
+    --city-card-width: 28rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Song';
+    line-height: 1;
+    color: var(--text-dark);
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+} img.icon {
+    height: 1em;
+}
+
+p {
+    margin: 0;
+    line-height: 1.25;
+    font-size: 1.5rem;
+}
+
+.card {
+    transition: all .1s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 0 10px rgb(0,0,0,0.1);
+    border-radius: .5rem;
+    border: var(--card-border);
+    padding: var(--card-gap);
+} .card:hover {
+    box-shadow: 0 0 20px rgb(0,0,0,0.2);
+    border: 1px solid rgb(192, 192, 192);
+
+}
+
+.macro-grid {
+    display: grid;
+    align-items: center;
+    gap: var(--gap);
+    margin: var(--gap);
+}   .macro-grid > * {
+    /* border: 1px solid red; */
+}
+
+.footer {
+    text-align: center;
+}
+
+.macro-grid > .title {
+    text-align: center;
+    font-size: 4rem;
+}
+
+#card-flex {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.city-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-gap);
+    padding: 0 0 var(--card-gap) 0;
+    width: var(--city-card-width);
+    height: var(--city-card-width);
+}   .city-card .title {
+        display: flex;
+        gap: .25em;
+        align-items: flex-end;
+        font-size: 1.5rem;
+        padding-bottom: .25rem;
+        border-bottom: var(--card-border);
+    }   .city-card .title > * {
+            padding-top: var(--card-gap);
+            display: inline-block;
+        } .city-card .title .ruby {
+        }   .city-card .title .ruby .jyutping {
+                font-size: .5em;
+                text-transform: lowercase;
+                width: 0;
+                height: 0;
+                position: relative;
+                bottom: 1.5em;
+                white-space: nowrap;
+                color: var(--text-light);
+            } .city-card .title .ruby .honzi {
+                font-weight: bold;
+            }
+        .city-card .title .english {
+            text-transform: uppercase;
+            font-weight: bold;
+        }   .city-card .title .english .translation {
+                display: inline-block;
+                text-align: left;
+                font-size: 0.5em;
+                color: var(--text-medium);
+            }
+    .city-card > * {
+        margin: 0 var(--card-gap);
+    } .city-card img.main {
+        margin: 0;
+        width: 100%;
+        /* aspect-ratio: 5 / 3; */
+        aspect-ratio: 7 / 4;
+        object-fit: cover;
+    } .city-card p.description {
+    }
